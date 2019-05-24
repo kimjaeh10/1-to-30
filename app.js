@@ -101,7 +101,7 @@ function countDown() {
         }
     }, 1000); */
 
-    /*$(counter).show();
+    $(counter).show();
     counter.innerHTML = "5";
     setTimeout(function () { counter.innerHTML = "4"; }, 200);
     setTimeout(function () { counter.innerHTML = "3"; }, 400);
@@ -111,12 +111,7 @@ function countDown() {
     
 
     startButton.disabled = true;
-    enable();*/
-
-    var count = 5;
-    var timer = null;
-
-
+    enable();
 }
 
 function disable() {
