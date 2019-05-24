@@ -1,0 +1,106 @@
+﻿@import url("https://fonts.googleapis.com/css?family=Asap:400,500,700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}
+
+body {
+    font-family: Asap, sans-serif;
+    font-size: 16px;
+    line-height: 2em;
+    background-color: #25272E;
+    color: white;
+    text-align: center;
+}
+
+header {
+    width: 100%;
+    background-color: white;
+    color: #25272E;
+    padding: 20px;
+    font-size: 30px;
+    border-bottom: #E25840 3px solid;
+}
+
+.container {
+    padding-top: 20px;
+}
+
+.container-top h2{
+    padding-top: 10px;
+    font-size: 48px;
+}
+
+.status {
+    font-size: 40px;
+    display: inline-block;
+    padding: 0 50px;
+}
+
+.status h2{
+    padding-bottom: 20px;
+    color: #E25840;
+}
+
+#current-number {
+    padding: 0 20px;
+}
+
+#last-number, #next-number {
+    font-size: 20px;
+    color: #777;
+}
+
+.playboard {
+    position:relative;
+    width: 450px;
+    height: auto;
+    margin: auto;
+}
+
+button {
+    width: 100px;
+    height: 100px;
+    margin: 3px;
+    border: none;
+    border-radius: 4px;
+    background-color: #eee;
+    color: #25272E;
+    font-size: 40px;
+}
+
+button:focus {
+    outline:0;
+}
+
+button:hover {
+    cursor:pointer;
+}
+
+#start-button {
+    width: 200px;
+    height: auto;
+    padding: 15px;
+    background-color: #E25840;
+}
+
+#start-button:hover {
+    font-weight: bold;
+    cursor:pointer;
+}
+
+#count-down {
+    font-size: 200px;
+    color: black;
+    position: absolute;
+    bottom: 200px;
+    left: 175px;
+}
+
+footer {
+    padding-top:20px;
+}
