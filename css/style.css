@@ -60,6 +60,9 @@ header {
     width: 450px;
     height: auto;
     margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-around;
 }
 
 .disabled {
@@ -68,6 +71,7 @@ header {
 }
 
 button {
+    text-align: center;
     width: 100px;
     height: 100px;
     margin: 3px;
