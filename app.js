@@ -20,11 +20,38 @@ const button15 = document.getElementById("button-15");
 const button16 = document.getElementById("button-16");
 const counter = document.getElementById("count-down");
 const startButton = document.getElementById("start-button");
+const lastNumber = document.getElementById("last-number");
+const currentNumber = document.getElementById("current-number");
+const nextNumber = document.getElementById("next-number");
 
-// Create a queue for storing nubmers 17 to 30
-for (var i = 17; i <= 30; i++) {
-    queue_17to30.push(i);
+// Object-oriented programming - Have to figure out how to pass by reference in JavaScript
+/*
+function Button(btn) {
+    this.btn = btn;
+    this.found = function (value, queue) {
+        console.log(this);
+    }
 }
+
+var Button1 = new Button(button1);
+var Button2 = new Button(button2);
+var Button3 = new Button(button3);
+var Button4 = new Button(button4);
+var Button5 = new Button(button5);
+var Button6 = new Button(button6);
+var Button7 = new Button(button7);
+var Button8 = new Button(button8);
+var Button9 = new Button(button9);
+var Button10 = new Button(button10);
+var Button11 = new Button(button11);
+var Button12 = new Button(button12);
+var Button13 = new Button(button13);
+var Button14 = new Button(button14);
+var Button15 = new Button(button15);
+var Button16 = new Button(button16);
+
+Button1.found();
+*/
 
 function start() {
     var queue_1to16 = []
@@ -155,7 +182,23 @@ function disable() {
     button13.disabled = true;
     button14.disabled = true;
     button15.disabled = true;
-    button16.disabled = true;    
+    button16.disabled = true;
+    button1.classList.remove("button-num");
+    button2.classList.remove("button-num");
+    button3.classList.remove("button-num");
+    button4.classList.remove("button-num");
+    button5.classList.remove("button-num");
+    button6.classList.remove("button-num");
+    button7.classList.remove("button-num");
+    button8.classList.remove("button-num");
+    button9.classList.remove("button-num");
+    button10.classList.remove("button-num");
+    button11.classList.remove("button-num");
+    button12.classList.remove("button-num");
+    button13.classList.remove("button-num");
+    button14.classList.remove("button-num");
+    button15.classList.remove("button-num");
+    button16.classList.remove("button-num");
 }
 
 function enable() {
@@ -194,17 +237,28 @@ function enable() {
 }
 
 function gameplay() {
+    // Reset next number board
+    lastNumber.innerHTML = " ";
+    currentNumber.innerHTML = 1;
+    nextNumber.innerHTML = 2;
+
+    // Create a queue for storing numbers 1 to 30
     for (var i = 1; i <= 30; i++) {
         queue_1to30.push(i);
+    }
+
+    // Create a queue for storing nubmers 17 to 30
+    for (var i = 17; i <= 30; i++) {
+        queue_17to30.push(i);
     }
 
     var index = 0;
 
     $(button1).click(function () {
-        console.log(queue_1to30);
         var value = button1.value;
         if (value == queue_1to30[index]) {
             console.log("found");
+            nextNumberBoard(value);
             // Remove the found number
             queue_1to30.shift();
 
@@ -218,6 +272,8 @@ function gameplay() {
                 button1.innerHTML = "";
                 button1.value = "";
             }
+
+            checkLastNumber(value);
         }
         else {
             console.log("not found");
@@ -225,10 +281,10 @@ function gameplay() {
     });
 
     $(button2).click(function () {
-        console.log(queue_1to30);
         var value = button2.value;
         if (value == queue_1to30[index]) {
             console.log("found");
+            nextNumberBoard(value);
             // Remove the found number
             queue_1to30.shift();
 
@@ -242,6 +298,8 @@ function gameplay() {
                 button2.innerHTML = "";
                 button2.value = "";
             }
+
+            checkLastNumber(value);
         }
         else {
             console.log("not found");
@@ -249,10 +307,10 @@ function gameplay() {
     });
 
     $(button3).click(function () {
-        console.log(queue_1to30);
         var value = button3.value;
         if (value == queue_1to30[index]) {
             console.log("found");
+            nextNumberBoard(value);
             // Remove the found number
             queue_1to30.shift();
 
@@ -266,6 +324,8 @@ function gameplay() {
                 button3.innerHTML = "";
                 button3.value = "";
             }
+
+            checkLastNumber(value);
         }
         else {
             console.log("not found");
@@ -273,10 +333,10 @@ function gameplay() {
     });
 
     $(button4).click(function () {
-        console.log(queue_1to30);
         var value = button4.value;
         if (value == queue_1to30[index]) {
             console.log("found");
+            nextNumberBoard(value);
             // Remove the found number
             queue_1to30.shift();
 
@@ -290,6 +350,8 @@ function gameplay() {
                 button4.innerHTML = "";
                 button4.value = "";
             }
+
+            checkLastNumber(value);
         }
         else {
             console.log("not found");
@@ -297,10 +359,10 @@ function gameplay() {
     });
 
     $(button5).click(function () {
-        console.log(queue_1to30);
         var value = button5.value;
         if (value == queue_1to30[index]) {
             console.log("found");
+            nextNumberBoard(value);
             // Remove the found number
             queue_1to30.shift();
 
@@ -314,6 +376,8 @@ function gameplay() {
                 button5.innerHTML = "";
                 button5.value = "";
             }
+
+            checkLastNumber(value);
         }
         else {
             console.log("not found");
@@ -321,10 +385,10 @@ function gameplay() {
     });
 
     $(button6).click(function () {
-        console.log(queue_1to30);
         var value = button6.value;
         if (value == queue_1to30[index]) {
             console.log("found");
+            nextNumberBoard(value);
             // Remove the found number
             queue_1to30.shift();
 
@@ -338,6 +402,8 @@ function gameplay() {
                 button6.innerHTML = "";
                 button6.value = "";
             }
+
+            checkLastNumber(value);
         }
         else {
             console.log("not found");
@@ -345,10 +411,10 @@ function gameplay() {
     });
 
     $(button7).click(function () {
-        console.log(queue_1to30);
         var value = button7.value;
         if (value == queue_1to30[index]) {
             console.log("found");
+            nextNumberBoard(value);
             // Remove the found number
             queue_1to30.shift();
 
@@ -362,6 +428,8 @@ function gameplay() {
                 button7.innerHTML = "";
                 button7.value = "";
             }
+
+            checkLastNumber(value);
         }
         else {
             console.log("not found");
@@ -369,10 +437,10 @@ function gameplay() {
     });
 
     $(button8).click(function () {
-        console.log(queue_1to30);
         var value = button8.value;
         if (value == queue_1to30[index]) {
             console.log("found");
+            nextNumberBoard(value);
             // Remove the found number
             queue_1to30.shift();
 
@@ -386,6 +454,8 @@ function gameplay() {
                 button8.innerHTML = "";
                 button8.value = "";
             }
+
+            checkLastNumber(value);
         }
         else {
             console.log("not found");
@@ -393,10 +463,10 @@ function gameplay() {
     });
 
     $(button9).click(function () {
-        console.log(queue_1to30);
         var value = button9.value;
         if (value == queue_1to30[index]) {
             console.log("found");
+            nextNumberBoard(value);
             // Remove the found number
             queue_1to30.shift();
 
@@ -410,6 +480,8 @@ function gameplay() {
                 button9.innerHTML = "";
                 button9.value = "";
             }
+
+            checkLastNumber(value);
         }
         else {
             console.log("not found");
@@ -417,10 +489,10 @@ function gameplay() {
     });
 
     $(button10).click(function () {
-        console.log(queue_1to30);
         var value = button10.value;
         if (value == queue_1to30[index]) {
             console.log("found");
+            nextNumberBoard(value);
             // Remove the found number
             queue_1to30.shift();
 
@@ -434,6 +506,8 @@ function gameplay() {
                 button10.innerHTML = "";
                 button10.value = "";
             }
+
+            checkLastNumber(value);
         }
         else {
             console.log("not found");
@@ -441,10 +515,10 @@ function gameplay() {
     });
 
     $(button11).click(function () {
-        console.log(queue_1to30);
         var value = button11.value;
         if (value == queue_1to30[index]) {
             console.log("found");
+            nextNumberBoard(value);
             // Remove the found number
             queue_1to30.shift();
 
@@ -458,6 +532,8 @@ function gameplay() {
                 button11.innerHTML = "";
                 button11.value = "";
             }
+
+            checkLastNumber(value);
         }
         else {
             console.log("not found");
@@ -465,10 +541,10 @@ function gameplay() {
     });
 
     $(button12).click(function () {
-        console.log(queue_1to30);
         var value = button12.value;
         if (value == queue_1to30[index]) {
             console.log("found");
+            nextNumberBoard(value);
             // Remove the found number
             queue_1to30.shift();
 
@@ -482,6 +558,8 @@ function gameplay() {
                 button12.innerHTML = "";
                 button12.value = "";
             }
+
+            checkLastNumber(value);
         }
         else {
             console.log("not found");
@@ -489,10 +567,10 @@ function gameplay() {
     });
 
     $(button13).click(function () {
-        console.log(queue_1to30);
         var value = button13.value;
         if (value == queue_1to30[index]) {
             console.log("found");
+            nextNumberBoard(value);
             // Remove the found number
             queue_1to30.shift();
 
@@ -506,6 +584,8 @@ function gameplay() {
                 button13.innerHTML = "";
                 button13.value = "";
             }
+
+            checkLastNumber(value);
         }
         else {
             console.log("not found");
@@ -513,10 +593,10 @@ function gameplay() {
     });
 
     $(button14).click(function () {
-        console.log(queue_1to30);
         var value = button14.value;
         if (value == queue_1to30[index]) {
             console.log("found");
+            nextNumberBoard(value);
             // Remove the found number
             queue_1to30.shift();
 
@@ -530,6 +610,8 @@ function gameplay() {
                 button14.innerHTML = "";
                 button14.value = "";
             }
+
+            checkLastNumber(value);
         }
         else {
             console.log("not found");
@@ -537,10 +619,10 @@ function gameplay() {
     });
 
     $(button15).click(function () {
-        console.log(queue_1to30);
         var value = button15.value;
         if (value == queue_1to30[index]) {
             console.log("found");
+            nextNumberBoard(value);
             // Remove the found number
             queue_1to30.shift();
 
@@ -554,6 +636,8 @@ function gameplay() {
                 button15.innerHTML = "";
                 button15.value = "";
             }
+
+            checkLastNumber(value);
         }
         else {
             console.log("not found");
@@ -561,10 +645,10 @@ function gameplay() {
     });
 
     $(button16).click(function () {
-        console.log(queue_1to30);
         var value = button16.value;
         if (value == queue_1to30[index]) {
             console.log("found");
+            nextNumberBoard(value);
             // Remove the found number
             queue_1to30.shift();
 
@@ -578,9 +662,43 @@ function gameplay() {
                 button16.innerHTML = "";
                 button16.value = "";
             }
+
+            checkLastNumber(value);
         }
         else {
             console.log("not found");
         }
     });
+}
+
+function checkLastNumber(value) {
+    if (value == 30) {
+        console.log("last number clicked");
+        startButton.disabled = false;
+        startButton.classList.remove("disabled");
+        disable();
+    }
+}
+
+function nextNumberBoard(value) {
+    val = parseInt(value);
+    if (val < 29) {
+        lastNumber.innerHTML = val;
+        currentNumber.innerHTML = val + 1;
+        nextNumber.innerHTML = val + 2;
+    }
+    else if (val == 29) {
+        lastNumber.innerHTML = 29;
+        currentNumber.innerHTML = 30;
+        nextNumber.innerHTML = " ";
+    }
+    else if (val == 30) {
+        lastNumber.innerHTML = "";
+        currentNumber.innerHTML = "X";
+        nextNumber.innerHTML = "";
+    }
+}
+
+function timer() {
+
 }
