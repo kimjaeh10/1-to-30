@@ -22,7 +22,7 @@ const counter = document.getElementById("count-down");
 const startButton = document.getElementById("start-button");
 
 // Create a queue for storing nubmers 17 to 30
-for (var i = 16; i <= 30; i++) {
+for (var i = 17; i <= 30; i++) {
     queue_17to30.push(i);
 }
 
@@ -121,7 +121,7 @@ function start() {
         countDown();
     }
 
-    //gameplay();
+    gameplay();
 }
 
 function countDown() {
@@ -176,51 +176,21 @@ function enable() {
     button15.disabled = false;
     button16.disabled = false;
     button1.classList.add("button-num");
-    $(button2).hover(function () {
-        $(this).toggleClass("button-num");
-    });
-    $(button3).hover(function () {
-        $(this).toggleClass("button-num");
-    });
-    $(button4).hover(function () {
-        $(this).toggleClass("button-num");
-    });
-    $(button5).hover(function () {
-        $(this).toggleClass("button-num");
-    });
-    $(button6).hover(function () {
-        $(this).toggleClass("button-num");
-    });
-    $(button7).hover(function () {
-        $(this).toggleClass("button-num");
-    });
-    $(button8).hover(function () {
-        $(this).toggleClass("button-num");
-    });
-    $(button9).hover(function () {
-        $(this).toggleClass("button-num");
-    });
-    $(button10).hover(function () {
-        $(this).toggleClass("button-num");
-    });
-    $(button11).hover(function () {
-        $(this).toggleClass("button-num");
-    });
-    $(button12).hover(function () {
-        $(this).toggleClass("button-num");
-    });
-    $(button13).hover(function () {
-        $(this).toggleClass("button-num");
-    });
-    $(button14).hover(function () {
-        $(this).toggleClass("button-num");
-    });
-    $(button15).hover(function () {
-        $(this).toggleClass("button-num");
-    });
-    $(button16).hover(function () {
-        $(this).toggleClass("button-num");
-    });
+    button2.classList.add("button-num");
+    button3.classList.add("button-num");
+    button4.classList.add("button-num");
+    button5.classList.add("button-num");
+    button6.classList.add("button-num");
+    button7.classList.add("button-num");
+    button8.classList.add("button-num");
+    button9.classList.add("button-num");
+    button10.classList.add("button-num");
+    button11.classList.add("button-num");
+    button12.classList.add("button-num");
+    button13.classList.add("button-num");
+    button14.classList.add("button-num");
+    button15.classList.add("button-num");
+    button16.classList.add("button-num");
 }
 
 function gameplay() {
@@ -231,9 +201,383 @@ function gameplay() {
     var index = 0;
 
     $(button1).click(function () {
+        console.log(queue_1to30);
         var value = button1.value;
         if (value == queue_1to30[index]) {
             console.log("found");
+            // Remove the found number
+            queue_1to30.shift();
+
+            // Assign next number if available
+            if (queue_17to30 && queue_17to30.length) {
+                next_value = queue_17to30.shift()
+                button1.innerHTML = next_value;
+                button1.value = next_value;
+            }
+            else {
+                button1.innerHTML = "";
+                button1.value = "";
+            }
+        }
+        else {
+            console.log("not found");
+        }
+    });
+
+    $(button2).click(function () {
+        console.log(queue_1to30);
+        var value = button2.value;
+        if (value == queue_1to30[index]) {
+            console.log("found");
+            // Remove the found number
+            queue_1to30.shift();
+
+            // Assign next number if available
+            if (queue_17to30 && queue_17to30.length) {
+                next_value = queue_17to30.shift()
+                button2.innerHTML = next_value;
+                button2.value = next_value;
+            }
+            else {
+                button2.innerHTML = "";
+                button2.value = "";
+            }
+        }
+        else {
+            console.log("not found");
+        }
+    });
+
+    $(button3).click(function () {
+        console.log(queue_1to30);
+        var value = button3.value;
+        if (value == queue_1to30[index]) {
+            console.log("found");
+            // Remove the found number
+            queue_1to30.shift();
+
+            // Assign next number if available
+            if (queue_17to30 && queue_17to30.length) {
+                next_value = queue_17to30.shift()
+                button3.innerHTML = next_value;
+                button3.value = next_value;
+            }
+            else {
+                button3.innerHTML = "";
+                button3.value = "";
+            }
+        }
+        else {
+            console.log("not found");
+        }
+    });
+
+    $(button4).click(function () {
+        console.log(queue_1to30);
+        var value = button4.value;
+        if (value == queue_1to30[index]) {
+            console.log("found");
+            // Remove the found number
+            queue_1to30.shift();
+
+            // Assign next number if available
+            if (queue_17to30 && queue_17to30.length) {
+                next_value = queue_17to30.shift()
+                button4.innerHTML = next_value;
+                button4.value = next_value;
+            }
+            else {
+                button4.innerHTML = "";
+                button4.value = "";
+            }
+        }
+        else {
+            console.log("not found");
+        }
+    });
+
+    $(button5).click(function () {
+        console.log(queue_1to30);
+        var value = button5.value;
+        if (value == queue_1to30[index]) {
+            console.log("found");
+            // Remove the found number
+            queue_1to30.shift();
+
+            // Assign next number if available
+            if (queue_17to30 && queue_17to30.length) {
+                next_value = queue_17to30.shift()
+                button5.innerHTML = next_value;
+                button5.value = next_value;
+            }
+            else {
+                button5.innerHTML = "";
+                button5.value = "";
+            }
+        }
+        else {
+            console.log("not found");
+        }
+    });
+
+    $(button6).click(function () {
+        console.log(queue_1to30);
+        var value = button6.value;
+        if (value == queue_1to30[index]) {
+            console.log("found");
+            // Remove the found number
+            queue_1to30.shift();
+
+            // Assign next number if available
+            if (queue_17to30 && queue_17to30.length) {
+                next_value = queue_17to30.shift()
+                button6.innerHTML = next_value;
+                button6.value = next_value;
+            }
+            else {
+                button6.innerHTML = "";
+                button6.value = "";
+            }
+        }
+        else {
+            console.log("not found");
+        }
+    });
+
+    $(button7).click(function () {
+        console.log(queue_1to30);
+        var value = button7.value;
+        if (value == queue_1to30[index]) {
+            console.log("found");
+            // Remove the found number
+            queue_1to30.shift();
+
+            // Assign next number if available
+            if (queue_17to30 && queue_17to30.length) {
+                next_value = queue_17to30.shift()
+                button7.innerHTML = next_value;
+                button7.value = next_value;
+            }
+            else {
+                button7.innerHTML = "";
+                button7.value = "";
+            }
+        }
+        else {
+            console.log("not found");
+        }
+    });
+
+    $(button8).click(function () {
+        console.log(queue_1to30);
+        var value = button8.value;
+        if (value == queue_1to30[index]) {
+            console.log("found");
+            // Remove the found number
+            queue_1to30.shift();
+
+            // Assign next number if available
+            if (queue_17to30 && queue_17to30.length) {
+                next_value = queue_17to30.shift()
+                button8.innerHTML = next_value;
+                button8.value = next_value;
+            }
+            else {
+                button8.innerHTML = "";
+                button8.value = "";
+            }
+        }
+        else {
+            console.log("not found");
+        }
+    });
+
+    $(button9).click(function () {
+        console.log(queue_1to30);
+        var value = button9.value;
+        if (value == queue_1to30[index]) {
+            console.log("found");
+            // Remove the found number
+            queue_1to30.shift();
+
+            // Assign next number if available
+            if (queue_17to30 && queue_17to30.length) {
+                next_value = queue_17to30.shift()
+                button9.innerHTML = next_value;
+                button9.value = next_value;
+            }
+            else {
+                button9.innerHTML = "";
+                button9.value = "";
+            }
+        }
+        else {
+            console.log("not found");
+        }
+    });
+
+    $(button10).click(function () {
+        console.log(queue_1to30);
+        var value = button10.value;
+        if (value == queue_1to30[index]) {
+            console.log("found");
+            // Remove the found number
+            queue_1to30.shift();
+
+            // Assign next number if available
+            if (queue_17to30 && queue_17to30.length) {
+                next_value = queue_17to30.shift()
+                button10.innerHTML = next_value;
+                button10.value = next_value;
+            }
+            else {
+                button10.innerHTML = "";
+                button10.value = "";
+            }
+        }
+        else {
+            console.log("not found");
+        }
+    });
+
+    $(button11).click(function () {
+        console.log(queue_1to30);
+        var value = button11.value;
+        if (value == queue_1to30[index]) {
+            console.log("found");
+            // Remove the found number
+            queue_1to30.shift();
+
+            // Assign next number if available
+            if (queue_17to30 && queue_17to30.length) {
+                next_value = queue_17to30.shift()
+                button11.innerHTML = next_value;
+                button11.value = next_value;
+            }
+            else {
+                button11.innerHTML = "";
+                button11.value = "";
+            }
+        }
+        else {
+            console.log("not found");
+        }
+    });
+
+    $(button12).click(function () {
+        console.log(queue_1to30);
+        var value = button12.value;
+        if (value == queue_1to30[index]) {
+            console.log("found");
+            // Remove the found number
+            queue_1to30.shift();
+
+            // Assign next number if available
+            if (queue_17to30 && queue_17to30.length) {
+                next_value = queue_17to30.shift()
+                button12.innerHTML = next_value;
+                button12.value = next_value;
+            }
+            else {
+                button12.innerHTML = "";
+                button12.value = "";
+            }
+        }
+        else {
+            console.log("not found");
+        }
+    });
+
+    $(button13).click(function () {
+        console.log(queue_1to30);
+        var value = button13.value;
+        if (value == queue_1to30[index]) {
+            console.log("found");
+            // Remove the found number
+            queue_1to30.shift();
+
+            // Assign next number if available
+            if (queue_17to30 && queue_17to30.length) {
+                next_value = queue_17to30.shift()
+                button13.innerHTML = next_value;
+                button13.value = next_value;
+            }
+            else {
+                button13.innerHTML = "";
+                button13.value = "";
+            }
+        }
+        else {
+            console.log("not found");
+        }
+    });
+
+    $(button14).click(function () {
+        console.log(queue_1to30);
+        var value = button14.value;
+        if (value == queue_1to30[index]) {
+            console.log("found");
+            // Remove the found number
+            queue_1to30.shift();
+
+            // Assign next number if available
+            if (queue_17to30 && queue_17to30.length) {
+                next_value = queue_17to30.shift()
+                button14.innerHTML = next_value;
+                button14.value = next_value;
+            }
+            else {
+                button14.innerHTML = "";
+                button14.value = "";
+            }
+        }
+        else {
+            console.log("not found");
+        }
+    });
+
+    $(button15).click(function () {
+        console.log(queue_1to30);
+        var value = button15.value;
+        if (value == queue_1to30[index]) {
+            console.log("found");
+            // Remove the found number
+            queue_1to30.shift();
+
+            // Assign next number if available
+            if (queue_17to30 && queue_17to30.length) {
+                next_value = queue_17to30.shift()
+                button15.innerHTML = next_value;
+                button15.value = next_value;
+            }
+            else {
+                button15.innerHTML = "";
+                button15.value = "";
+            }
+        }
+        else {
+            console.log("not found");
+        }
+    });
+
+    $(button16).click(function () {
+        console.log(queue_1to30);
+        var value = button16.value;
+        if (value == queue_1to30[index]) {
+            console.log("found");
+            // Remove the found number
+            queue_1to30.shift();
+
+            // Assign next number if available
+            if (queue_17to30 && queue_17to30.length) {
+                next_value = queue_17to30.shift()
+                button16.innerHTML = next_value;
+                button16.value = next_value;
+            }
+            else {
+                button16.innerHTML = "";
+                button16.value = "";
+            }
         }
         else {
             console.log("not found");
