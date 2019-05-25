@@ -1,4 +1,7 @@
-var queue_17to30 = []
+var queue_1to30 = [];
+var queue_17to30 = [];
+var count = 5;
+var restart = false;
 const button1 = document.getElementById("button-1");
 const button2 = document.getElementById("button-2");
 const button3 = document.getElementById("button-3");
@@ -39,79 +42,101 @@ function start() {
         input = queue_1to16.shift();
         if (i == 1) {
             button1.innerHTML = input;
+            button1.value = input;
         }
         if (i == 2) {
             button2.innerHTML = input;
+            button2.value = input;
         }
         if (i == 3) {
             button3.innerHTML = input;
+            button3.value = input;
         }
         if (i == 4) {
             button4.innerHTML = input;
+            button4.value = input;
         }
         if (i == 5) {
             button5.innerHTML = input;
+            button5.value = input;
         }
         if (i == 6) {
             button6.innerHTML = input;
+            button6.value = input;
         }
         if (i == 7) {
             button7.innerHTML = input;
+            button7.value = input;
         }
         if (i == 8) {
             button8.innerHTML = input;
+            button8.value = input;
         }
         if (i == 9) {
             button9.innerHTML = input;
+            button9.value = input;
         }
         if (i == 10) {
             button10.innerHTML = input;
+            button10.value = input;
         }
         if (i == 11) {
             button11.innerHTML = input;
+            button11.value = input;
         }
         if (i == 12) {
             button12.innerHTML = input;
+            button12.value = input;
         }
         if (i == 13) {
             button13.innerHTML = input;
+            button13.value = input;
         }
         if (i == 14) {
             button14.innerHTML = input;
+            button14.value = input;
         }
         if (i == 15) {
             button15.innerHTML = input;
+            button15.value = input;
         }
         if (i == 16) {
             button16.innerHTML = input;
-        }
+            button16.value = input;
+        }        
     }
 
-    countDown();
+    // Disable the start button
+    startButton.disabled = true;
+    startButton.classList.add("disabled");
+
+    // First Start
+    if (!restart) {
+        restart = true;
+        countDown();
+    }
+    // Restart
+    else if (restart) {
+        count = 5;
+        countDown();
+    }
+
+    //gameplay();
 }
 
 function countDown() {
-    /* var timeleft = 5;
-    var downloadTimer = setInterval(function () {
-        counter.innerHTML = timeleft;
-        timeleft--;
-        if (timeleft < 0) {
-            clearInterval(downloadTimer);
-            counter.innerHTML = "0";
-        }
-    }, 1000); */
-
     $(counter).show();
-    counter.innerHTML = "5";
-    setTimeout(function () { counter.innerHTML = "4"; }, 200);
-    setTimeout(function () { counter.innerHTML = "3"; }, 400);
-    setTimeout(function () { counter.innerHTML = "2"; }, 600);
-    setTimeout(function () { counter.innerHTML = "1"; }, 800);
-    setTimeout(function () { $(counter).hide(); }, 1000);
-    
-
-    startButton.disabled = true;
-    enable();
+    if (count <= 0) {
+        $(counter).hide();
+        enable();
+        clearTimeout(r);
+        return;
+    }
+    else {
+        counter.innerHTML = count;
+    }
+    count--;
+    r = setTimeout("countDown()", 500);
 }
 
 function disable() {
@@ -134,7 +159,7 @@ function disable() {
 }
 
 function enable() {
-    button1.removeAttribute("disabled");
+    button1.disabled = false;
     button2.disabled = false;
     button3.disabled = false;
     button4.disabled = false;
@@ -150,53 +175,68 @@ function enable() {
     button14.disabled = false;
     button15.disabled = false;
     button16.disabled = false;
-    console.log(button1);
-    $(button1).hover(function () {
-        $(this).toggleClass("startb");
-    });
+    button1.classList.add("button-num");
     $(button2).hover(function () {
-        $(this).toggleClass("startb");
+        $(this).toggleClass("button-num");
     });
     $(button3).hover(function () {
-        $(this).toggleClass("startb");
+        $(this).toggleClass("button-num");
     });
     $(button4).hover(function () {
-        $(this).toggleClass("startb");
+        $(this).toggleClass("button-num");
     });
     $(button5).hover(function () {
-        $(this).toggleClass("startb");
+        $(this).toggleClass("button-num");
     });
     $(button6).hover(function () {
-        $(this).toggleClass("startb");
+        $(this).toggleClass("button-num");
     });
     $(button7).hover(function () {
-        $(this).toggleClass("startb");
+        $(this).toggleClass("button-num");
     });
     $(button8).hover(function () {
-        $(this).toggleClass("startb");
+        $(this).toggleClass("button-num");
     });
     $(button9).hover(function () {
-        $(this).toggleClass("startb");
+        $(this).toggleClass("button-num");
     });
     $(button10).hover(function () {
-        $(this).toggleClass("startb");
+        $(this).toggleClass("button-num");
     });
     $(button11).hover(function () {
-        $(this).toggleClass("startb");
+        $(this).toggleClass("button-num");
     });
     $(button12).hover(function () {
-        $(this).toggleClass("startb");
+        $(this).toggleClass("button-num");
     });
     $(button13).hover(function () {
-        $(this).toggleClass("startb");
+        $(this).toggleClass("button-num");
     });
     $(button14).hover(function () {
-        $(this).toggleClass("startb");
+        $(this).toggleClass("button-num");
     });
     $(button15).hover(function () {
-        $(this).toggleClass("startb");
+        $(this).toggleClass("button-num");
     });
     $(button16).hover(function () {
-        $(this).toggleClass("startb");
+        $(this).toggleClass("button-num");
+    });
+}
+
+function gameplay() {
+    for (var i = 1; i <= 30; i++) {
+        queue_1to30.push(i);
+    }
+
+    var index = 0;
+
+    $(button1).click(function () {
+        var value = button1.value;
+        if (value == queue_1to30[index]) {
+            console.log("found");
+        }
+        else {
+            console.log("not found");
+        }
     });
 }
