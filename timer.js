@@ -34,7 +34,7 @@ var clocktimer;
 var t = new StopWatch();
 
 function update() {
-    timer.innerHTML = foramtTime(x.time());
+    timer.innerHTML = foramtTime(t.time());
 }
 
 function start() {

@@ -251,12 +251,10 @@ function gameplay() {
     for (var i = 17; i <= 30; i++) {
         queue_17to30.push(i);
     }
-
-    var index = 0;
-
+    
     $(button1).click(function () {
         var value = button1.value;
-        if (value == queue_1to30[index]) {
+        if (value == queue_1to30[0]) {
             console.log("found");
             nextNumberBoard(value);
             // Remove the found number
@@ -282,7 +280,7 @@ function gameplay() {
 
     $(button2).click(function () {
         var value = button2.value;
-        if (value == queue_1to30[index]) {
+        if (value == queue_1to30[0]) {
             console.log("found");
             nextNumberBoard(value);
             // Remove the found number
@@ -308,7 +306,7 @@ function gameplay() {
 
     $(button3).click(function () {
         var value = button3.value;
-        if (value == queue_1to30[index]) {
+        if (value == queue_1to30[0]) {
             console.log("found");
             nextNumberBoard(value);
             // Remove the found number
@@ -334,7 +332,7 @@ function gameplay() {
 
     $(button4).click(function () {
         var value = button4.value;
-        if (value == queue_1to30[index]) {
+        if (value == queue_1to30[0]) {
             console.log("found");
             nextNumberBoard(value);
             // Remove the found number
@@ -360,7 +358,7 @@ function gameplay() {
 
     $(button5).click(function () {
         var value = button5.value;
-        if (value == queue_1to30[index]) {
+        if (value == queue_1to30[0]) {
             console.log("found");
             nextNumberBoard(value);
             // Remove the found number
@@ -386,7 +384,7 @@ function gameplay() {
 
     $(button6).click(function () {
         var value = button6.value;
-        if (value == queue_1to30[index]) {
+        if (value == queue_1to30[0]) {
             console.log("found");
             nextNumberBoard(value);
             // Remove the found number
@@ -412,7 +410,7 @@ function gameplay() {
 
     $(button7).click(function () {
         var value = button7.value;
-        if (value == queue_1to30[index]) {
+        if (value == queue_1to30[0]) {
             console.log("found");
             nextNumberBoard(value);
             // Remove the found number
@@ -438,7 +436,7 @@ function gameplay() {
 
     $(button8).click(function () {
         var value = button8.value;
-        if (value == queue_1to30[index]) {
+        if (value == queue_1to30[0]) {
             console.log("found");
             nextNumberBoard(value);
             // Remove the found number
@@ -464,7 +462,7 @@ function gameplay() {
 
     $(button9).click(function () {
         var value = button9.value;
-        if (value == queue_1to30[index]) {
+        if (value == queue_1to30[0]) {
             console.log("found");
             nextNumberBoard(value);
             // Remove the found number
@@ -490,7 +488,7 @@ function gameplay() {
 
     $(button10).click(function () {
         var value = button10.value;
-        if (value == queue_1to30[index]) {
+        if (value == queue_1to30[0]) {
             console.log("found");
             nextNumberBoard(value);
             // Remove the found number
@@ -516,7 +514,7 @@ function gameplay() {
 
     $(button11).click(function () {
         var value = button11.value;
-        if (value == queue_1to30[index]) {
+        if (value == queue_1to30[0]) {
             console.log("found");
             nextNumberBoard(value);
             // Remove the found number
@@ -542,7 +540,7 @@ function gameplay() {
 
     $(button12).click(function () {
         var value = button12.value;
-        if (value == queue_1to30[index]) {
+        if (value == queue_1to30[0]) {
             console.log("found");
             nextNumberBoard(value);
             // Remove the found number
@@ -568,7 +566,7 @@ function gameplay() {
 
     $(button13).click(function () {
         var value = button13.value;
-        if (value == queue_1to30[index]) {
+        if (value == queue_1to30[0]) {
             console.log("found");
             nextNumberBoard(value);
             // Remove the found number
@@ -594,7 +592,7 @@ function gameplay() {
 
     $(button14).click(function () {
         var value = button14.value;
-        if (value == queue_1to30[index]) {
+        if (value == queue_1to30[0]) {
             console.log("found");
             nextNumberBoard(value);
             // Remove the found number
@@ -620,7 +618,7 @@ function gameplay() {
 
     $(button15).click(function () {
         var value = button15.value;
-        if (value == queue_1to30[index]) {
+        if (value == queue_1to30[0]) {
             console.log("found");
             nextNumberBoard(value);
             // Remove the found number
@@ -646,7 +644,7 @@ function gameplay() {
 
     $(button16).click(function () {
         var value = button16.value;
-        if (value == queue_1to30[index]) {
+        if (value == queue_1to30[0]) {
             console.log("found");
             nextNumberBoard(value);
             // Remove the found number
@@ -677,6 +675,22 @@ function checkLastNumber(value) {
         startButton.disabled = false;
         startButton.classList.remove("disabled");
         disable();
+        $(button1).unbind("click");
+        $(button2).unbind("click");
+        $(button3).unbind("click");
+        $(button4).unbind("click");
+        $(button5).unbind("click");
+        $(button6).unbind("click");
+        $(button7).unbind("click");
+        $(button8).unbind("click");
+        $(button9).unbind("click");
+        $(button10).unbind("click");
+        $(button11).unbind("click");
+        $(button12).unbind("click");
+        $(button13).unbind("click");
+        $(button14).unbind("click");
+        $(button15).unbind("click");
+        $(button16).unbind("click");
     }
 }
 
