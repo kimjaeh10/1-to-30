@@ -25,7 +25,7 @@ const currentNumber = document.getElementById("current-number");
 const nextNumber = document.getElementById("next-number");
 
 // Object-oriented programming - Have to figure out how to pass by reference in JavaScript
-/*
+
 function Button(btn) {
     this.btn = btn;
     this.found = function (value, queue) {
@@ -51,7 +51,7 @@ var Button15 = new Button(button15);
 var Button16 = new Button(button16);
 
 Button1.found();
-*/
+
 
 function start() {
     var queue_1to16 = []
@@ -699,6 +699,3 @@ function nextNumberBoard(value) {
     }
 }
 
-function timer() {
-
-}
