@@ -24,7 +24,87 @@ const lastNumber = document.getElementById("last-number");
 const currentNumber = document.getElementById("current-number");
 const nextNumber = document.getElementById("next-number");
 
-// Object-oriented programming - Have to figure out how to pass by reference in JavaScript
+// Object-oriented programming
+
+var Stopwatch = function () {
+    // Private vars
+    var startAt = 0;	// Time of last start / resume. (0 if not running)
+    var lapTime = 0;	// Time on the clock when last stopped in milliseconds
+
+    var now = function () {
+        return (new Date()).getTime();
+    };
+
+    // Public methods
+    // Start or resume
+    this.start = function () {
+        startAt = startAt ? startAt : now();
+    };
+
+    // Stop or pause
+    this.stop = function () {
+        // If running, update elapsed time otherwise keep it
+        lapTime = startAt ? lapTime + now() - startAt : lapTime;
+        startAt = 0; // Paused
+    };
+
+    // Reset
+    this.reset = function () {
+        lapTime = startAt = 0;
+    };
+
+    // Duration
+    this.time = function () {
+        return lapTime + (startAt ? now() - startAt : 0);
+    };
+};
+
+var t = new Stopwatch();
+var $time = document.getElementById("time");
+var clocktimer;
+
+function pad(num, size) {
+    var s = "0000" + num;
+    return s.substr(s.length - size);
+}
+
+function formatTime(time) {
+    var s = ms = 0;
+    var newTime = '';
+
+    time = time % (60 * 60 * 1000);
+    time = time % (60 * 1000);
+    s = Math.floor(time / 1000);
+    ms = time % 1000;
+
+    newTime = pad(s, 2) + ' : ' + pad(ms, 2);
+    return newTime;
+}
+
+function t_show() {
+    $time = document.getElementById('time');
+    t_update();
+}
+
+function t_update() {
+    $time.innerHTML = formatTime(t.time());
+}
+
+function t_start() {
+    clocktimer = setInterval("t_update()", 1);
+    t.start();
+}
+
+function t_stop() {
+    t.stop();
+    clearInterval(clocktimer);
+}
+
+function t_reset() {
+    t_stop();
+    t.reset();
+    t_update();
+}
 
 function Button(btn) {
     this.btn = btn;
@@ -59,8 +139,6 @@ var Button13 = new Button(button13);
 var Button14 = new Button(button14);
 var Button15 = new Button(button15);
 var Button16 = new Button(button16);
-
-console.log(Button1.btn.value);
 
 function start() {
     var queue_1to16 = []
@@ -166,6 +244,10 @@ function countDown() {
         $(counter).hide();
         enable();
         clearTimeout(r);
+
+        // Start the timer
+        t_start();
+
         return;
     }
     else {
@@ -575,6 +657,9 @@ function checkLastNumber(value) {
         $(button14).unbind("click");
         $(button15).unbind("click");
         $(button16).unbind("click");
+
+        // Stop the timer
+        t_stop();
     }
 }
 
