@@ -1,5 +1,5 @@
 var queue_1to30 = [];
-var queue_17to30 = [];
+var array_17to30 = [];
 var count = 5;
 var restart = false;
 const button1 = document.getElementById("button-1");
@@ -28,8 +28,18 @@ const nextNumber = document.getElementById("next-number");
 
 function Button(btn) {
     this.btn = btn;
-    this.found = function (value, queue) {
-        console.log(this);
+    this.found = function (arr, index) {
+        if (index < 14) {
+            next_value = arr[index];
+            this.btn.innerHTML = next_value;
+            this.btn.value = next_value;
+            return index + 1;
+        }
+        else {
+            this.btn.innerHTML = "";
+            this.btn.value = "";
+            return index;
+        }
     }
 }
 
@@ -50,8 +60,7 @@ var Button14 = new Button(button14);
 var Button15 = new Button(button15);
 var Button16 = new Button(button16);
 
-Button1.found();
-
+console.log(Button1.btn.value);
 
 function start() {
     var queue_1to16 = []
@@ -249,27 +258,22 @@ function gameplay() {
 
     // Create a queue for storing nubmers 17 to 30
     for (var i = 17; i <= 30; i++) {
-        queue_17to30.push(i);
+        array_17to30.push(i);
     }
-    
+
+    var index = 0;
+
     $(button1).click(function () {
         var value = button1.value;
         if (value == queue_1to30[0]) {
             console.log("found");
             nextNumberBoard(value);
+
             // Remove the found number
             queue_1to30.shift();
-
+            
             // Assign next number if available
-            if (queue_17to30 && queue_17to30.length) {
-                next_value = queue_17to30.shift()
-                button1.innerHTML = next_value;
-                button1.value = next_value;
-            }
-            else {
-                button1.innerHTML = "";
-                button1.value = "";
-            }
+            index = Button1.found(array_17to30, index);
 
             checkLastNumber(value);
         }
@@ -287,15 +291,7 @@ function gameplay() {
             queue_1to30.shift();
 
             // Assign next number if available
-            if (queue_17to30 && queue_17to30.length) {
-                next_value = queue_17to30.shift()
-                button2.innerHTML = next_value;
-                button2.value = next_value;
-            }
-            else {
-                button2.innerHTML = "";
-                button2.value = "";
-            }
+            index = Button2.found(array_17to30, index);
 
             checkLastNumber(value);
         }
@@ -313,15 +309,7 @@ function gameplay() {
             queue_1to30.shift();
 
             // Assign next number if available
-            if (queue_17to30 && queue_17to30.length) {
-                next_value = queue_17to30.shift()
-                button3.innerHTML = next_value;
-                button3.value = next_value;
-            }
-            else {
-                button3.innerHTML = "";
-                button3.value = "";
-            }
+            index = Button3.found(array_17to30, index);
 
             checkLastNumber(value);
         }
@@ -339,15 +327,7 @@ function gameplay() {
             queue_1to30.shift();
 
             // Assign next number if available
-            if (queue_17to30 && queue_17to30.length) {
-                next_value = queue_17to30.shift()
-                button4.innerHTML = next_value;
-                button4.value = next_value;
-            }
-            else {
-                button4.innerHTML = "";
-                button4.value = "";
-            }
+            index = Button4.found(array_17to30, index);
 
             checkLastNumber(value);
         }
@@ -365,15 +345,7 @@ function gameplay() {
             queue_1to30.shift();
 
             // Assign next number if available
-            if (queue_17to30 && queue_17to30.length) {
-                next_value = queue_17to30.shift()
-                button5.innerHTML = next_value;
-                button5.value = next_value;
-            }
-            else {
-                button5.innerHTML = "";
-                button5.value = "";
-            }
+            index = Button5.found(array_17to30, index);
 
             checkLastNumber(value);
         }
@@ -391,15 +363,7 @@ function gameplay() {
             queue_1to30.shift();
 
             // Assign next number if available
-            if (queue_17to30 && queue_17to30.length) {
-                next_value = queue_17to30.shift()
-                button6.innerHTML = next_value;
-                button6.value = next_value;
-            }
-            else {
-                button6.innerHTML = "";
-                button6.value = "";
-            }
+            index = Button6.found(array_17to30, index);
 
             checkLastNumber(value);
         }
@@ -417,15 +381,7 @@ function gameplay() {
             queue_1to30.shift();
 
             // Assign next number if available
-            if (queue_17to30 && queue_17to30.length) {
-                next_value = queue_17to30.shift()
-                button7.innerHTML = next_value;
-                button7.value = next_value;
-            }
-            else {
-                button7.innerHTML = "";
-                button7.value = "";
-            }
+            index = Button7.found(array_17to30, index);
 
             checkLastNumber(value);
         }
@@ -443,15 +399,7 @@ function gameplay() {
             queue_1to30.shift();
 
             // Assign next number if available
-            if (queue_17to30 && queue_17to30.length) {
-                next_value = queue_17to30.shift()
-                button8.innerHTML = next_value;
-                button8.value = next_value;
-            }
-            else {
-                button8.innerHTML = "";
-                button8.value = "";
-            }
+            index = Button8.found(array_17to30, index);
 
             checkLastNumber(value);
         }
@@ -469,15 +417,7 @@ function gameplay() {
             queue_1to30.shift();
 
             // Assign next number if available
-            if (queue_17to30 && queue_17to30.length) {
-                next_value = queue_17to30.shift()
-                button9.innerHTML = next_value;
-                button9.value = next_value;
-            }
-            else {
-                button9.innerHTML = "";
-                button9.value = "";
-            }
+            index = Button9.found(array_17to30, index);
 
             checkLastNumber(value);
         }
@@ -495,15 +435,7 @@ function gameplay() {
             queue_1to30.shift();
 
             // Assign next number if available
-            if (queue_17to30 && queue_17to30.length) {
-                next_value = queue_17to30.shift()
-                button10.innerHTML = next_value;
-                button10.value = next_value;
-            }
-            else {
-                button10.innerHTML = "";
-                button10.value = "";
-            }
+            index = Button10.found(array_17to30, index);
 
             checkLastNumber(value);
         }
@@ -521,15 +453,7 @@ function gameplay() {
             queue_1to30.shift();
 
             // Assign next number if available
-            if (queue_17to30 && queue_17to30.length) {
-                next_value = queue_17to30.shift()
-                button11.innerHTML = next_value;
-                button11.value = next_value;
-            }
-            else {
-                button11.innerHTML = "";
-                button11.value = "";
-            }
+            index = Button11.found(array_17to30, index);
 
             checkLastNumber(value);
         }
@@ -547,15 +471,7 @@ function gameplay() {
             queue_1to30.shift();
 
             // Assign next number if available
-            if (queue_17to30 && queue_17to30.length) {
-                next_value = queue_17to30.shift()
-                button12.innerHTML = next_value;
-                button12.value = next_value;
-            }
-            else {
-                button12.innerHTML = "";
-                button12.value = "";
-            }
+            index = Button12.found(array_17to30, index);
 
             checkLastNumber(value);
         }
@@ -573,15 +489,7 @@ function gameplay() {
             queue_1to30.shift();
 
             // Assign next number if available
-            if (queue_17to30 && queue_17to30.length) {
-                next_value = queue_17to30.shift()
-                button13.innerHTML = next_value;
-                button13.value = next_value;
-            }
-            else {
-                button13.innerHTML = "";
-                button13.value = "";
-            }
+            index = Button13.found(array_17to30, index);
 
             checkLastNumber(value);
         }
@@ -599,15 +507,7 @@ function gameplay() {
             queue_1to30.shift();
 
             // Assign next number if available
-            if (queue_17to30 && queue_17to30.length) {
-                next_value = queue_17to30.shift()
-                button14.innerHTML = next_value;
-                button14.value = next_value;
-            }
-            else {
-                button14.innerHTML = "";
-                button14.value = "";
-            }
+            index = Button14.found(array_17to30, index);
 
             checkLastNumber(value);
         }
@@ -625,15 +525,7 @@ function gameplay() {
             queue_1to30.shift();
 
             // Assign next number if available
-            if (queue_17to30 && queue_17to30.length) {
-                next_value = queue_17to30.shift()
-                button15.innerHTML = next_value;
-                button15.value = next_value;
-            }
-            else {
-                button15.innerHTML = "";
-                button15.value = "";
-            }
+            index = Button15.found(array_17to30, index);
 
             checkLastNumber(value);
         }
@@ -651,15 +543,7 @@ function gameplay() {
             queue_1to30.shift();
 
             // Assign next number if available
-            if (queue_17to30 && queue_17to30.length) {
-                next_value = queue_17to30.shift()
-                button16.innerHTML = next_value;
-                button16.value = next_value;
-            }
-            else {
-                button16.innerHTML = "";
-                button16.value = "";
-            }
+            index = Button16.found(array_17to30, index);
 
             checkLastNumber(value);
         }
