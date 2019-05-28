@@ -235,6 +235,9 @@ function start() {
         countDown();
     }
 
+    // Reset the timer
+    t_reset();
+
     gameplay();
 }
 
