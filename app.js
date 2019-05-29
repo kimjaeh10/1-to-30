@@ -24,8 +24,7 @@ const lastNumber = document.getElementById("last-number");
 const currentNumber = document.getElementById("current-number");
 const nextNumber = document.getElementById("next-number");
 
-// Object-oriented programming
-
+// Timer object
 var Stopwatch = function () {
     // Private vars
     var startAt = 0;	// Time of last start / resume. (0 if not running)
@@ -72,8 +71,8 @@ function formatTime(time) {
     var s = ms = 0;
     var newTime = '';
 
-    time = time % (60 * 60 * 1000);
-    time = time % (60 * 1000);
+    // time = time % (60 * 60 * 1000);
+    // time = time % (60 * 1000);
     s = Math.floor(time / 1000);
     ms = time % 1000;
 
@@ -106,6 +105,39 @@ function t_reset() {
     t_update();
 }
 
+function playCorrectSound(value) {
+    if (value != 30) {
+        var sound = document.getElementById("correct-audio");
+        sound.load();
+        sound.play();
+    }
+    else {
+        var sound = document.getElementById("last-number-audio");
+        sound.load();
+        sound.play();
+    }
+    
+}
+
+function playIncorrectSound() {
+    var sound = document.getElementById("incorrect-audio");
+    sound.load();
+    sound.play();
+}
+
+function playCountDownSound() {
+    var sound = document.getElementById("count-down-audio");
+    sound.load();
+    sound.play();
+}
+
+function playCountDownDoneSound() {
+    var sound = document.getElementById("count-down-done-audio");
+    sound.load();
+    sound.play();
+}
+
+// Button object
 function Button(btn) {
     this.btn = btn;
     this.found = function (arr, index) {
@@ -244,6 +276,7 @@ function start() {
 function countDown() {
     $(counter).show();
     if (count <= 0) {
+        playCountDownDoneSound()
         $(counter).hide();
         enable();
         clearTimeout(r);
@@ -254,6 +287,7 @@ function countDown() {
         return;
     }
     else {
+        playCountDownSound();
         counter.innerHTML = count;
     }
     count--;
@@ -352,6 +386,7 @@ function gameplay() {
         var value = button1.value;
         if (value == queue_1to30[0]) {
             console.log("found");
+            playCorrectSound(value);
             nextNumberBoard(value);
 
             // Remove the found number
@@ -364,6 +399,7 @@ function gameplay() {
         }
         else {
             console.log("not found");
+            playIncorrectSound();
         }
     });
 
@@ -371,6 +407,7 @@ function gameplay() {
         var value = button2.value;
         if (value == queue_1to30[0]) {
             console.log("found");
+            playCorrectSound(value);
             nextNumberBoard(value);
             // Remove the found number
             queue_1to30.shift();
@@ -382,6 +419,7 @@ function gameplay() {
         }
         else {
             console.log("not found");
+            playIncorrectSound();
         }
     });
 
@@ -389,6 +427,7 @@ function gameplay() {
         var value = button3.value;
         if (value == queue_1to30[0]) {
             console.log("found");
+            playCorrectSound(value);
             nextNumberBoard(value);
             // Remove the found number
             queue_1to30.shift();
@@ -400,6 +439,7 @@ function gameplay() {
         }
         else {
             console.log("not found");
+            playIncorrectSound();
         }
     });
 
@@ -407,6 +447,7 @@ function gameplay() {
         var value = button4.value;
         if (value == queue_1to30[0]) {
             console.log("found");
+            playCorrectSound(value);
             nextNumberBoard(value);
             // Remove the found number
             queue_1to30.shift();
@@ -418,6 +459,7 @@ function gameplay() {
         }
         else {
             console.log("not found");
+            playIncorrectSound();
         }
     });
 
@@ -425,6 +467,7 @@ function gameplay() {
         var value = button5.value;
         if (value == queue_1to30[0]) {
             console.log("found");
+            playCorrectSound(value);
             nextNumberBoard(value);
             // Remove the found number
             queue_1to30.shift();
@@ -436,6 +479,7 @@ function gameplay() {
         }
         else {
             console.log("not found");
+            playIncorrectSound();
         }
     });
 
@@ -443,6 +487,7 @@ function gameplay() {
         var value = button6.value;
         if (value == queue_1to30[0]) {
             console.log("found");
+            playCorrectSound(value);
             nextNumberBoard(value);
             // Remove the found number
             queue_1to30.shift();
@@ -454,6 +499,7 @@ function gameplay() {
         }
         else {
             console.log("not found");
+            playIncorrectSound();
         }
     });
 
@@ -461,6 +507,7 @@ function gameplay() {
         var value = button7.value;
         if (value == queue_1to30[0]) {
             console.log("found");
+            playCorrectSound(value);
             nextNumberBoard(value);
             // Remove the found number
             queue_1to30.shift();
@@ -472,6 +519,7 @@ function gameplay() {
         }
         else {
             console.log("not found");
+            playIncorrectSound();
         }
     });
 
@@ -479,6 +527,7 @@ function gameplay() {
         var value = button8.value;
         if (value == queue_1to30[0]) {
             console.log("found");
+            playCorrectSound(value);
             nextNumberBoard(value);
             // Remove the found number
             queue_1to30.shift();
@@ -490,6 +539,7 @@ function gameplay() {
         }
         else {
             console.log("not found");
+            playIncorrectSound();
         }
     });
 
@@ -497,6 +547,7 @@ function gameplay() {
         var value = button9.value;
         if (value == queue_1to30[0]) {
             console.log("found");
+            playCorrectSound(value);
             nextNumberBoard(value);
             // Remove the found number
             queue_1to30.shift();
@@ -508,6 +559,7 @@ function gameplay() {
         }
         else {
             console.log("not found");
+            playIncorrectSound();
         }
     });
 
@@ -515,6 +567,7 @@ function gameplay() {
         var value = button10.value;
         if (value == queue_1to30[0]) {
             console.log("found");
+            playCorrectSound(value);
             nextNumberBoard(value);
             // Remove the found number
             queue_1to30.shift();
@@ -526,6 +579,7 @@ function gameplay() {
         }
         else {
             console.log("not found");
+            playIncorrectSound();
         }
     });
 
@@ -533,6 +587,7 @@ function gameplay() {
         var value = button11.value;
         if (value == queue_1to30[0]) {
             console.log("found");
+            playCorrectSound(value);
             nextNumberBoard(value);
             // Remove the found number
             queue_1to30.shift();
@@ -544,6 +599,7 @@ function gameplay() {
         }
         else {
             console.log("not found");
+            playIncorrectSound();
         }
     });
 
@@ -551,6 +607,7 @@ function gameplay() {
         var value = button12.value;
         if (value == queue_1to30[0]) {
             console.log("found");
+            playCorrectSound(value);
             nextNumberBoard(value);
             // Remove the found number
             queue_1to30.shift();
@@ -562,6 +619,7 @@ function gameplay() {
         }
         else {
             console.log("not found");
+            playIncorrectSound();
         }
     });
 
@@ -569,6 +627,7 @@ function gameplay() {
         var value = button13.value;
         if (value == queue_1to30[0]) {
             console.log("found");
+            playCorrectSound(value);
             nextNumberBoard(value);
             // Remove the found number
             queue_1to30.shift();
@@ -580,6 +639,7 @@ function gameplay() {
         }
         else {
             console.log("not found");
+            playIncorrectSound();
         }
     });
 
@@ -587,6 +647,7 @@ function gameplay() {
         var value = button14.value;
         if (value == queue_1to30[0]) {
             console.log("found");
+            playCorrectSound(value);
             nextNumberBoard(value);
             // Remove the found number
             queue_1to30.shift();
@@ -598,6 +659,7 @@ function gameplay() {
         }
         else {
             console.log("not found");
+            playIncorrectSound();
         }
     });
 
@@ -605,6 +667,7 @@ function gameplay() {
         var value = button15.value;
         if (value == queue_1to30[0]) {
             console.log("found");
+            playCorrectSound(value);
             nextNumberBoard(value);
             // Remove the found number
             queue_1to30.shift();
@@ -616,6 +679,7 @@ function gameplay() {
         }
         else {
             console.log("not found");
+            playIncorrectSound();
         }
     });
 
@@ -623,6 +687,7 @@ function gameplay() {
         var value = button16.value;
         if (value == queue_1to30[0]) {
             console.log("found");
+            playCorrectSound(value);
             nextNumberBoard(value);
             // Remove the found number
             queue_1to30.shift();
@@ -634,6 +699,7 @@ function gameplay() {
         }
         else {
             console.log("not found");
+            playIncorrectSound();
         }
     });
 }
