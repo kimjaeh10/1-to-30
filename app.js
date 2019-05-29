@@ -291,7 +291,7 @@ function countDown() {
         counter.innerHTML = count;
     }
     count--;
-    r = setTimeout("countDown()", 500);
+    r = setTimeout("countDown()", 750);
 }
 
 function disable() {
