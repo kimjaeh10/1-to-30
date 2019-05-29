@@ -5,6 +5,9 @@ A Web-based game created with HTML, CSS, and JavaScript. How fast can you click 
 
 ![Preview](https://user-images.githubusercontent.com/48369187/58526341-aaaf3080-819c-11e9-9536-c366af62fa12.png)
 
+## Game Play
+[Game Play](https://www.youtube.com/watch?v=zMFpgIZ95SA)
+
 
 ## Object-oriented Programming
 #### StopWatch
