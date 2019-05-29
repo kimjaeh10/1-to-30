@@ -1,6 +1,9 @@
 # 1 to 30
 A Web-based game created with HTML, CSS, and JavaScript. How fast can you click 1 to 30?
 
+## Preview
+
+![Preview](https://user-images.githubusercontent.com/48369187/58526341-aaaf3080-819c-11e9-9536-c366af62fa12.png)
 
 
 ## Object-oriented Programming
